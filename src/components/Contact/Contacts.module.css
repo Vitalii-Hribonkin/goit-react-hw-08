@@ -1,0 +1,39 @@
+.h4{
+    font-family: 'Montserrat', sans-serif;
+        color: #000;
+        font-size: 16px;
+}
+
+.p{
+    font-family: 'Montserrat', sans-serif;
+        color: #000;
+        font-size: 16px;
+}
+
+.cont_btn{
+    display: flex;
+    gap: 20px;
+}
+
+
+.btn{
+    width: max-content;
+        border: none;
+        background-color: #426aee;
+        padding: 10px 20px;
+        font-family: 'Montserrat', sans-serif;
+        color: #fff;
+        font-size: 16px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    background-color: #3651c7;
+}
+
+.btn:focus {
+    background-color: #1d3b8b;
+}

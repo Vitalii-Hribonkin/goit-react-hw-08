@@ -1,0 +1,71 @@
+.header{
+    display: flex;
+    padding: 16px;
+}
+
+.container{
+    display: flex;
+    gap: 580px;
+}
+
+.h2{
+    font-family: 'Montserrat', sans-serif;
+    color: #000;
+    font-size: 24px;
+}
+
+.p{
+    font-family: 'Montserrat', sans-serif;
+    color: #000;
+    font-size: 16px;
+}
+
+.nav{
+    display: flex;
+    margin-left: 700px;
+    gap: 12px;
+}
+.navlink{
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    color: #426aee;
+    font-size: 16px;
+    transition: 250ms;
+}
+
+.activeNavlink {
+    color: #426aee;
+    font-weight: bold;
+    border-bottom: 2px solid #426aee;
+    text-decoration: none;
+}
+
+.navlink:hover{
+    color: blue;
+    transform: scale(1.1);
+}
+.navlink:focus {
+    color: blue;
+}
+
+.btn {
+    width: max-content;
+    border: none;
+    background-color: #426aee;
+    padding: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    background-color: #3651c7;
+}
+
+.btn:focus {
+    background-color: #1d3b8b;
+}
