@@ -1,11 +1,11 @@
-// contactsSlice.js
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchContacts, addContact, deleteContact, updateContact } from "./operations"; // Импортируем все операции
+import { fetchContacts, addContact, deleteContact, updateContact } from "./operations"; // Додаємо logOut
+import { logoutThunk } from "../auth/operations";
 
 const initialState = {
-  items: [], // Список контактов
-  loading: false, // Статус загрузки
-  error: null, // Ошибки
+  items: [],
+  loading: false,
+  error: null,
 };
 
 const contactsSlice = createSlice({
@@ -26,16 +26,21 @@ const contactsSlice = createSlice({
         state.error = action.payload;
       })
       .addCase(addContact.fulfilled, (state, action) => {
-        state.items.push(action.payload); 
+        state.items.push(action.payload);
       })
       .addCase(deleteContact.fulfilled, (state, action) => {
-        state.items = state.items.filter((contact) => contact.id !== action.payload); // Удаляем контакт
+        state.items = state.items.filter((contact) => contact.id !== action.payload);
       })
       .addCase(updateContact.fulfilled, (state, action) => {
-        const index = state.items.findIndex(contact => contact.id === action.payload.id); // Находим индекс обновлённого контакта
+        const index = state.items.findIndex(contact => contact.id === action.payload.id);
         if (index !== -1) {
-          state.items[index] = action.payload; 
+          state.items[index] = action.payload;
         }
+      })
+      .addCase(logoutThunk.fulfilled, (state) => { 
+        state.items = [];
+        state.loading = false;
+        state.error = null;
       });
   },
 });

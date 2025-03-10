@@ -3,9 +3,8 @@ import { useDispatch } from "react-redux";
 import { loginThunk } from "../../redux/auth/operations";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import s from "./Login.module.css"; 
 
-export const Login = () => {
+export const LoginForm = () => {
   const initialValues = {
     email: '',
     password: '',
@@ -26,21 +25,23 @@ export const Login = () => {
   };
 
   return (
-    <div className={s.container}>
+    <div>
       <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-        <Form className={s.form}>
+        <Form>
           <label>
-            <span className={s.p}>Email:</span>
-            <Field className={s.field} name='email' />
+            <span>Email:</span>
+            <Field  name='email' />
           </label>
           <label>
-            <span className={s.p}>Password:</span>
-            <Field className={s.field} name='password' type='password' />
+            <span >Password:</span>
+            <Field  name='password' type='password' />
           </label>
-          <button className={s.btn} type="submit">Login</button>
-          <p className={s.p}>You don`t have an account yet? <Link to='/register'>Just do it</Link></p>
+          <button  type="submit">Login</button>
+          <p >You don`t have an account yet? <Link to='/register'>Just do it</Link></p>
         </Form>
       </Formik>
     </div>
   );
 };
+
+export default LoginForm

@@ -1,6 +1,6 @@
 
 
-export const Home = () => {
+export const HomePage = () => {
   return (
       <div>
           <h1>Home Page</h1>
@@ -8,4 +8,4 @@ export const Home = () => {
   )
 }
 
-export default Home
+export default HomePage
